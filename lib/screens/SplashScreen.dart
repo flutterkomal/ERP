@@ -1,4 +1,7 @@
 
+
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,24 +13,25 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  startTime() async {
+  var _duration = new Duration(seconds: 2);
+  return new Timer(_duration,navigationPage);
+  }
 
+  void navigationPage() {
+    Navigator.of(context).pushReplacementNamed("/company");
+  }
   @override
   void initState() {
     super.initState();
-    new Future.delayed(
-        const Duration(seconds: 5),
-            () => Navigator.push(context,
-          MaterialPageRoute(builder: (context) => CompanyPage()),
-        ));
+    startTime();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Center(
         child:Text(
-          // ignore: argument_type_not_assignable
           "Flutter",
           style: TextStyle(
               color: Colors.green,
