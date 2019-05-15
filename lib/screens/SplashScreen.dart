@@ -1,8 +1,8 @@
 
-
-import 'package:erp_flutter/screens/LoginPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'CompanyConfig.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     new Future.delayed(
         const Duration(seconds: 5),
             () => Navigator.push(context,
-          MaterialPageRoute(builder: (context) => LoginPage()),
+          MaterialPageRoute(builder: (context) => CompanyPage()),
         ));
   }
 
